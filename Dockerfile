@@ -1,0 +1,4 @@
+FROM apache/airflow:2.10.5-python3.12
+COPY requirements.txt /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt \
+    -c "https://raw.githubusercontent.com/apache/airflow/constraints-2.10.5/constraints-3.12.txt"
